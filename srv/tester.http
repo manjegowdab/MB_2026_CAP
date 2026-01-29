@@ -1,0 +1,48 @@
+###Access the service document
+http://localhost:4004/odata/v4/CatalogService
+###Access the service metadata document
+http://localhost:4004/odata/v4/CatalogService/$metadata
+###Get ALL the employee data
+http://localhost:4004/odata/v4/CatalogService/EmployeeSrv
+###Get SINGLE employee data by KEY - (pick a key from last call)
+http://localhost:4004/odata/v4/CatalogService/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
+
+
+###POST the employee data - create
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeSrv
+Content-Type: application/json
+
+
+{
+  "nameFirst": "Christiano",
+  "nameMiddle": null,
+  "nameLast": "Ronaldo",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": null,
+  "email": "christiano.ro@sony.com",
+  "loginName": "RONALDOCH",
+  "Currency_code": "USD",
+  "salaryAmount": 81463,
+  "accountNumber": "2233445566",
+  "bankId": "26005885",
+  "bankName": "My Bank of New York"
+}
+
+
+
+
+###PATCH the employee data - update -- COPY THE ID FROM LAST CALL RESULT
+PATCH http://localhost:4004/odata/v4/CatalogService/EmployeeSrv/40f07c6f-c460-4b13-943b-1808f14027b8
+Content-Type: application/json
+
+
+{
+    "Currency_code": "EUR",
+    "salaryAmount": 10000000
+}
+
+
+###DELETE the employee data - remove
+DELETE  http://localhost:4004/odata/v4/CatalogService/EmployeeSrv/40f07c6f-c460-4b13-943b-1808f14027b8
