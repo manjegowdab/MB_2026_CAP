@@ -64,7 +64,7 @@ context master {
         Currency      : Currency;
         salaryAmount  : common.AmountT;
         accountNumber : String(16);
-        bankId        : String(8)@(title : '{i18n>bankId}');
+        bankId        : String(40)@(title : '{i18n>bankId}');
         bankName      : String(64);
     }
 }
